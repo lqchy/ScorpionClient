@@ -1,0 +1,33 @@
+{
+    "schemaVersion": 1,
+    "id": "scorpionclient",
+    "version": "${version}",
+    "name": "ScorpionClient",
+    "description": "Custom client for Minecraft",
+    "authors": [
+        "lqchy"
+    ],
+    "contact": {
+        "website": "https://sl1907.codes/scorpion",
+        "repo": "https://github.com/lqchy/ScorpionClient"
+    },
+    "license": "MIT",
+    "icon": "assets/scorpionclient/icon.png",
+    "environment": "client",
+    "entrypoints": {
+        "client": [
+            "me.lachy.scorpionclient.client.ScorpionClient"
+        ],
+        "main": [
+            "me.lachy.scorpionclient.Scorpion"
+        ]
+    },
+    "mixins": [
+        "scorpionclient.mixins.json"
+    ],
+    "depends": {
+        "fabricloader": ">=0.14.9",
+        "fabric": "*",
+        "minecraft": "1.19.2"
+    }
+}
