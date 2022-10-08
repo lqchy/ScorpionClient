@@ -13,10 +13,12 @@ public class ScorpionClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ClientTickEvents.START_CLIENT_TICK.register(client -> {
-            String c = client.currentScreen.getClass().getSimpleName();
-            if (!this.e.equals(c)) {
-                this.e = c;
-                System.out.println(c);
+            if (client.currentScreen != null) {
+                String c = client.currentScreen.getClass().getSimpleName();
+                if (!this.e.equals(c)) {
+                    this.e = c;
+                    System.out.println(c);
+                }
             }
         });
     }
