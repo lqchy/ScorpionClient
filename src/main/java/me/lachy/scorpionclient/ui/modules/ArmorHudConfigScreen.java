@@ -1,5 +1,6 @@
 package me.lachy.scorpionclient.ui.modules;
 
+import me.lachy.scorpionclient.modules.ArmorHUD;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.Screen;
@@ -25,6 +26,7 @@ public class ArmorHudConfigScreen extends Screen {
         this.options = new ClickableWidget[] {
                 SimpleOption.ofBoolean("options.fov", SimpleOption.emptyTooltip(), true).createButton(this.client.options, 0, 0, 150)
         };
+        new ArmorHUD(this.client);
     }
 
     @Override
