@@ -32,8 +32,6 @@ import static net.minecraft.client.gui.screen.TitleScreen.COPYRIGHT;
 @SuppressWarnings("UnstableApiUsage")
 @Mixin(TitleScreen.class)
 public abstract class TitleScreenMixin extends Screen {
-    @Shadow @Final public static CubeMapRenderer PANORAMA_CUBE_MAP;
-
     @Shadow public abstract void removed();
 
     private final Style HYPIXEL_STYLE = Style.EMPTY.withColor(TextColor.fromRgb(new Color(253, 172, 54).getRGB()));
