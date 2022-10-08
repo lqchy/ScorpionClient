@@ -1,5 +1,6 @@
 package me.lachy.scorpionclient.ui;
 
+import com.sun.jna.platform.KeyboardUtils;
 import me.lachy.scorpionclient.Scorpion;
 import me.lachy.scorpionclient.modules.ScorpionModules;
 import net.minecraft.client.MinecraftClient;
@@ -9,6 +10,8 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
+import net.minecraft.util.Identifier;
+import org.lwjgl.glfw.GLFW;
 
 @SuppressWarnings("DuplicatedCode")
 public class ScorpionConfigScreen extends Screen {
@@ -47,4 +50,5 @@ public class ScorpionConfigScreen extends Screen {
         OptionsScreen.drawCenteredText(matrices, this.textRenderer, this.title, this.width / 2, 15, 0xFFFFFF);
         super.render(matrices, mouseX, mouseY, delta);
     }
+
 }
