@@ -25,7 +25,7 @@ public class GameMenuScreenMixin extends Screen {
         super(Text.translatable("menu.game"));
     }
 
-    @Inject(at = @At("HEAD"), method = "initWidgets")
+    @Inject(at = @At("HEAD"), method = "initWidgets", cancellable = true)
     public void initWidgets(CallbackInfo ci) {
         int i = -16;
         int j = 98;
