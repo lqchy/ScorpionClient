@@ -1,11 +1,7 @@
 package me.lachy.scorpionclient.ui.modules;
 
-import me.lachy.scorpionclient.modules.ArmorHUD;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.gui.screen.option.OptionsScreen;
-import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.PressableWidget;
 import net.minecraft.client.option.SimpleOption;
@@ -13,20 +9,19 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 
 @SuppressWarnings("DuplicatedCode")
-public class ArmorHudConfigScreen extends Screen {
+public class ArmorHUDConfigScreen extends Screen {
 
     private final Screen parent;
     private final ClickableWidget[] options;
     private final MinecraftClient client;
 
-    public ArmorHudConfigScreen(Screen parent, MinecraftClient client) {
+    public ArmorHUDConfigScreen(Screen parent, MinecraftClient client) {
         super(Text.literal("Armor HUD Config"));
         this.parent = parent;
         this.client = client;
         this.options = new ClickableWidget[] {
                 SimpleOption.ofBoolean("options.fov", SimpleOption.emptyTooltip(), true).createButton(this.client.options, 0, 0, 150)
         };
-        new ArmorHUD(this.client);
     }
 
     @Override
