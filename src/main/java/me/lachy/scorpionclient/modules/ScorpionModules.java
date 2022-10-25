@@ -1,7 +1,6 @@
 package me.lachy.scorpionclient.modules;
 
-import me.lachy.scorpionclient.ui.ScorpionConfigScreen;
-import me.lachy.scorpionclient.ui.modules.ArmorHudConfigScreen;
+import me.lachy.scorpionclient.ui.modules.ArmorHUDConfigScreen;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -23,7 +22,7 @@ public class ScorpionModules {
 
     private final ThreadLocalRandom random = ThreadLocalRandom.current();
     private final ButtonWidget test = new ButtonWidget(0, 0, 150, 20, Text.literal("Armor HUD"), button ->
-        this.client.setScreen(new ArmorHudConfigScreen(this.mainConfigScreen, this.client)));
+        this.client.setScreen(new ArmorHUDConfigScreen(this.mainConfigScreen, this.client)));
 
     private final ButtonWidget test2 = new ButtonWidget(0, 0, 150, 20, Text.literal("Test 2"), button ->
             button.setMessage(button.getMessage().copy()
