@@ -2,7 +2,6 @@ package me.lachy.scorpionclient.mixin.ui;
 
 import me.lachy.scorpionclient.Scorpion;
 import me.lachy.scorpionclient.ui.ScorpionConfigScreen;
-import net.minecraft.SharedConstants;
 import net.minecraft.client.gui.screen.*;
 import net.minecraft.client.gui.screen.advancement.AdvancementsScreen;
 import net.minecraft.client.gui.screen.multiplayer.MultiplayerScreen;
@@ -12,7 +11,6 @@ import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.realms.gui.screen.RealmsMainScreen;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
-import net.minecraft.util.Util;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -37,10 +35,7 @@ public class GameMenuScreenMixin extends Screen {
         this.addDrawableChild(new ButtonWidget(this.width / 2 + 4, this.height / 4 + 48 + -16, 98, 20, Text.translatable("gui.stats"), button -> this.client.setScreen(new StatsScreen(this, this.client.player.getStatHandler()))));
 
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 102, this.height / 4 + 72 + -16, 204, 20, Text.literal("Scorpion").setStyle(Scorpion.SCORPION_STYLE),
-            button -> {
-                this.client.setScreen(new ScorpionConfigScreen(this, this.client));
-                this.client.mouse.lockCursor();
-            }
+            button -> this.client.setScreen(new ScorpionConfigScreen(this, this.client))
         ));
 
         this.addDrawableChild(new ButtonWidget(this.width / 2 - 102, this.height / 4 + 96 + -16, 98, 20, Text.translatable("menu.options"), button -> this.client.setScreen(new OptionsScreen(this, this.client.options))));
